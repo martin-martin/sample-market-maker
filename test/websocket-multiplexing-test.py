@@ -1,3 +1,4 @@
+import os
 import codecs
 import hashlib
 import hmac
@@ -17,12 +18,12 @@ from websocket import create_connection
 
 # Replace these with your keys.
 KEYS = {
-    "CfwQ4SZ6gM_t6dIy1bCLJylX": "f9XOPLacPCZJ1dvPzN8B6Et7nMEaPGeomMSHk8Cr2zD4NfCY"
+    os.environ.get('BITMEX_ID'): os.environ.get('BITMEX_SECRET')
 }
 
 # Switch these comments to use testnet instead.
-BITMEX_URL = "ws://localhost:3000"
-# BITMEX_URL="wss://testnet.bitmex.com"
+# BITMEX_URL = "ws://localhost:3000"
+BITMEX_URL="wss://testnet.bitmex.com"
 # BITMEX_URL="wss://www.bitmex.com"
 
 VERB = "GET"

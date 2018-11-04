@@ -1,3 +1,4 @@
+import os
 import hashlib
 import hmac
 import json
@@ -15,12 +16,12 @@ from websocket import create_connection
 ###
 
 # These are not real keys - replace them with your keys.
-API_KEY = "CfwQ4SZ6gM_t6dIy1bCLJylX"
-API_SECRET = "f9XOPLacPCZJ1dvPzN8B6Et7nMEaPGeomMSHk8Cr2zD4NfCY"
+API_KEY = os.environ.get('BITMEX_ID')
+API_SECRET = os.environ.get('BITMEX_SECRET')
 
 # Switch these comments to use testnet instead.
-# BITMEX_URL = "wss://testnet.bitmex.com"
-BITMEX_URL = "wss://www.bitmex.com"
+BITMEX_URL = "wss://testnet.bitmex.com"
+# BITMEX_URL = "wss://www.bitmex.com"
 
 VERB = "GET"
 ENDPOINT = "/realtime"
